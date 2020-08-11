@@ -1,0 +1,184 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = pl_PL
+
+% $Id:$
+
+
+
+
+
+\newcommand{\kurs}{Wizualizacja danych sensorycznych}
+\newcommand{\formakursu}{Projekt}
+
+
+\newcommand{\doctype}{Raport z rezultat\'{o}w projektu}
+
+
+
+
+\newcommand{\projectname}{Wizualizacja warunk\'{o}w narciarskich w g\'{o}rach}
+
+
+
+
+
+
+\newcommand{\osobaA}{Wojciech \textsc{Kosicki}, 234506}
+
+
+\newcommand{\termin}{cz 18:55}
+
+
+\newcommand{\prowadzacy}{Dr in\.{z}. Bogdan \textsc{Kreczmer}}
+
+\documentclass[10pt, a4paper]{article}
+
+
+\include{preambula}
+	
+\begin{document}
+
+\def\tablename{Tabela}	
+
+\begin{titlepage}
+	\begin{center}
+		\textsc{\LARGE \formakursu}\\[1cm]		
+		\textsc{\Large \kurs}\\[0.5cm]		
+		\rule{\textwidth}{0.08cm}\\[0.4cm]
+		{\huge \bfseries \doctype}\\[1cm]
+		{\huge \bfseries \projectname}\\[0.5cm]
+	
+		\rule{\textwidth}{0.08cm}\\[1cm]
+		
+		\begin{flushright} \large
+		\emph{Skład grupy:}\\
+		\osobaA\\
+
+		
+		\emph{Termin: }\termin\\[0.4cm]
+
+		\emph{Prowadzący:} \\
+		\prowadzacy \\
+		
+		\end{flushright}
+		
+		\vfill
+		
+		{\large \today}
+	\end{center}	
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Wstęp}
+\label{sec:OpisProjektu}
+Dokument został stworzony jako sprawozdanie z prawie końcowego etapu realizacji projektu pt. "Wizualizacja warunków narciarskich w górach". Projekt jest realizowany w qt Creator 4.5.1. Raport ten omawia przebieg prac oraz określa co udało się zrealizować z założeń projektu. Jest to też ostateczny raport końcowy.
+
+\section{Implementacja okien aplikacji} 
+Zakończono prace nad wyglądem okna Domyślnego i okna Szczytu aplikacji. Usunięto obszary testowe i ułożono wszystkie elementy typu Widget. Program w celach prezentacyjnych zawiera cztery szczyty, Karpacz, Szczyrk, Krynicę oraz Zieleniec. Na głównym oknie wyświetlane są dane o zachmurzeniu, temperaturze, stanie zaśnieżenia stoku oraz ogólny stan pogodowy na szczycie. Aby wyświetlić dokładniejsze informacje o warunkach panujących na danym wzgórzu, trzeba kliknąć jego symbol na mapie. Można otworzyć kilka szczytów naraz w różnych oknach. Wybierając pozycję w Menu o nazwie Aktualizacja danych, dokonuje się pobrania danych z portalu internetowego dostarczających informacji pogodowych. Wybierając z kolei opcję w Menu, Zmiana widoku mapy, można zmienić wygląd mapy Polski z graficznej na geograficzną i z powrotem. Zarówno okno Szczytu jak i okno Domyślne mają na stałe ustawione wymiary 1200x500 pikseli. 
+
+
+\section{Pobranie danych ze strony internetowej} 
+Program wykorzystuje biblioteki QNetworkAccessManager, QNetworkRequest oraz QNetworkReply by pobrać kod źródłowy strony o podanym url. 
+Aplikacja ściąga kod źródłowy strony internetowej z odpowiednimi danymi o warunkach pogodowych na danym szczycie. Kod, po odpowiednim wyselekcjonowaniu istotnego fragmentu jest zapisywany w pliku .txt. Do wyboru odpowiedniego fragmentu kodu wykorzystano bibliotekę QRegExp, służącą do parsowania danych ze zmiennej QString. 
+
+\section{Parsowanie danych} 
+Po ściągnięciu odpowiedniego fragmentu kodu źródłowego należało wyciągnąć odpowiednie zmienne z jego zawartości. Do parsowania danych wykorzystaną tę samą bibliotekę, która została wykorzystana do zapisania w pliku .txt odpowiedniego fragmentu kodu, QRegExp. QRegExp daje szerokie możliwości do wyszukiwania odpowiednich określeń w tekście, parsowania danych lub modyfikacji danych typu QString. 
+\section{Ocena jakości szczytu} 
+Program ma za zadanie oceniać ogólną jakość warunków narciarskich na danym szczycie.
+Każdej danej uzyskanej z kodu źródłowego przypisano wartość punktową. Rozdzielenie wartości punktowych jest uzależnione od specyfikacji danej. W punktacji uwzględniona została waga danego warunku atmosferycznego (np. temperatura jest o wiele bardziej istotna niż ciśnienie) oraz wyjątki (np. opady są pozytywnie punktowane tylko przy ujemnej temperaturze).
+W celu określenia jakości pogodowych na danym szczycie, napisano funkcję algorytm(). Ma ona za zadanie przyjąć punktowe wartości danych warunków atmosferycznych i określić stan szczytu. 
+\section{Prace graficzne} 
+Grafiki testowe, które zostały wykonane w programie Paint, zostały zastąpione grafikami zrealizowanymi w Inkspace. Poszczególne obrazy typu .PNG stworzono od podstaw wykorzystując możliwości oprogramowania graficznego Inkspace oraz w mniejszym stopniu Gimp.Nie stworzono jednak ich w formie przeźroczystego tła, aby zachowały swoją czytelność, nawet przy zmianie widoku mapy na graficzny.  
+
+\newpage
+\section{Obecny roboczy wygląd aplikacji} 
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{02.png}
+	\caption{Główne okno z mapą graficzną}
+	\end{figure}
+	
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{03.png}
+	\caption{Główne okno z mapą geograficzną}
+	\end{figure}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{04.png}
+	\caption{Okno szczytu Zieleniec}
+	\end{figure}
+\newpage
+\newpage
+\newpage
+\section{Podsumowanie} 
+Projekt pt. Wizualizacja warunków narciarskich w górach został zrealizowany w większości założeń projektowych. Udało się zaimplementować pobieranie i parsowanie danych od serwisu zewnętrznego. Za pomocą bibliotek Qt stworzono aplikację, która w przejrzysty sposób przedstawia pogodę na wybranym szczycie i daje szybka przejrzystą ocenę szczytu. Założenia projektowe trzeba było lekko zweryfikować i zmodyfikować w fazie realizacji projektu. Pd koniec marca zaobserwowano zamknięcie serwisu pogodowego z którego miały być pobierane początkowo dane. Dlatego trzeba było wybrać inny serwis internetowy i dobrać innego typu dane. Zabrakło teraz min. liczby aktywnych wyciągów. Aplikację testowano na niewielkiej próbce użytkowników w liczbie 33. W skład ich wchodziło 11 studentów (wiek 19-21 lat), 11 licealistów (wiek 16-18 lat) oraz 11 osób pracujących (wiek 24-34 lat). Wszyscy badani potwierdzili, że regularnie wyjeżdżają w góry na narty. Poniżej zamieszczono wyniki ankiety. Jak widzimy, aplikacja najlepiej została oceniona przez ludzi pracujących. Aczkolwiek uzyskana różnica w ocen między studentami i pracującymi, może być przypadkowa przy tak małej próbce. Mimo to można stwierdzić, że aplikacja spotkała się z pozytywną oceną. Rzadko zdarzały się wyniki poniżej 3 punktów na 5. To na co zwracali przede wszystkim użytkownicy to brak możliwości sprawdzenia aktywnych wyciągów oraz brak możliwości sprawdzenia większej liczby szczytów. Liczba szczytów ograniczona do czterech była przyjęta w założeniach projektowych. Założono, że nie ma potrzeby implementować więcej szczytów na wersje prototypową aplikacji. Z kolei brak informacji o aktywnych wyciągach jest wynikiem ograniczonych możliwości serwisu zewnętrznego. Ku zaskoczeniu, żaden użytkownik nie skrytykował graficznego wyglądu aplikacji, mimo nie zaimplementowania przeźroczystego tła dla grafik oraz braku animacji. Trudności ze zrealizowaniem tych dwóch elementów wynikały ze złego zaplanowania terminów realizacji projektu oraz wzrostu obciążenia zasobu czasu w okresie od 1 czerwca do 21 czerwca. 
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{w1.png}
+	
+	\end{figure}
+		\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{w2.png}
+
+	\end{figure}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{w3.png}
+	
+	\end{figure}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{w4.png}
+
+	\end{figure}
+
+\addcontentsline{toc}{section}{Bibilografia}
+\bibliography{bibliografia}
+\bibliographystyle{plain}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

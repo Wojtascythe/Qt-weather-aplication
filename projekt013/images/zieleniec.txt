@@ -1,0 +1,10 @@
+<tr>
+<td class="yrrow_a" style="background-color: #ffffff;"><strong>Dziœ</strong></td>
+<td class="yrrow_a" style="background-color: #ffffff;">&nbsp;</td>
+<td class="yrrow_a" style="background-color: #ffffff;"><img src="/modules/mod_yrno/images/icons/3.png" alt=""/></td>
+<td class="yrrow_a" style="background-color: #ffffff;"><strong><span class="over">16&deg;C</span></strong></td>
+<td class="yrrow_a" style="background-color: #ffffff;">brak</td>
+<td class="yrrow_a" style="background-color: #ffffff;">1016.5 hPa</td>
+<td class="yrrow_a" style="text-align: left;background-color: #ffffff;">S³aby wiatr z zachodu</td>
+<td class="yrrow_a" style="text-align: right;background-color: #ffffff;">9 km/h</td>
+</tr>

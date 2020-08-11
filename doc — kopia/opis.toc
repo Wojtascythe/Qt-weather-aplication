@@ -1,0 +1,10 @@
+\babel@toc {polish}{}
+\contentsline {section}{\numberline {1}Wst\IeC {\k e}p}{2}{section.1}
+\contentsline {section}{\numberline {2}Implementacja okien aplikacji}{2}{section.2}
+\contentsline {section}{\numberline {3}Pobranie danych ze strony internetowej}{2}{section.3}
+\contentsline {section}{\numberline {4}Parsowanie danych}{2}{section.4}
+\contentsline {section}{\numberline {5}Ocena jako\IeC {\'s}ci szczytu}{2}{section.5}
+\contentsline {section}{\numberline {6}Prace graficzne}{2}{section.6}
+\contentsline {section}{\numberline {7}Obecny roboczy wygl\IeC {\k a}d aplikacji}{3}{section.7}
+\contentsline {section}{\numberline {8}Podsumowanie}{4}{section.8}
+\contentsline {section}{Bibilografia}{4}{section.8}

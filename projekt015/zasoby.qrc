@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/zasoby">
+        <file>images/test.txt</file>
+        <file>images/topo.jpg</file>
+        <file>images/back.png</file>
+        <file>images/n1.png</file>
+        <file>images/n2.png</file>
+        <file>images/n3.png</file>
+        <file>images/n4.png</file>
+        <file>images/n5.png</file>
+        <file>images/sn1.png</file>
+        <file>images/sn2.png</file>
+        <file>images/sn3.png</file>
+        <file>images/s1.png</file>
+        <file>images/s2.png</file>
+        <file>images/s3.png</file>
+        <file>images/s4.png</file>
+        <file>images/s5.png</file>
+        <file>images/ski-2.jpg</file>
+        <file>images/nw1.png</file>
+        <file>images/nw2.png</file>
+        <file>images/nw3.png</file>
+        <file>images/nw4.png</file>
+        <file>images/nw5.png</file>
+        <file>images/snw1.png</file>
+        <file>images/snw2.png</file>
+        <file>images/snw3.png</file>
+        <file>images/sw1.png</file>
+        <file>images/sw2.png</file>
+        <file>images/sw3.png</file>
+        <file>images/sw4.png</file>
+        <file>images/sw5.png</file>
+    </qresource>
+    <qresource prefix="/zasoby/dane"/>
+    <qresource prefix="/"/>
+</RCC>

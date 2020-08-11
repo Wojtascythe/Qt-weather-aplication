@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/zasoby">
+        <file>images/s5.png</file>
+        <file>images/test.txt</file>
+        <file>images/s2.png</file>
+        <file>images/s3.png</file>
+        <file>images/s4.png</file>
+        <file>images/topo.jpg</file>
+        <file>images/back.png</file>
+    </qresource>
+    <qresource prefix="/zasoby/dane"/>
+    <qresource prefix="/"/>
+</RCC>

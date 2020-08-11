@@ -1,0 +1,259 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = pl_PL
+
+% $Id:$
+
+
+
+
+
+\newcommand{\kurs}{Wizualizacja danych sensorycznych}
+\newcommand{\formakursu}{Projekt}
+
+
+\newcommand{\doctype}{Raport ze wczesnego etapu projektu}
+
+
+
+
+\newcommand{\projectname}{Wizualizacja warunk\'{o}w narciarskich w g\'{o}rach}
+
+
+
+
+
+
+\newcommand{\osobaA}{Wojciech \textsc{Kosicki}, 234506}
+
+
+\newcommand{\termin}{cz 18:55}
+
+
+\newcommand{\prowadzacy}{Dr in\.{z}. Bogdan \textsc{Kreczmer}}
+
+\documentclass[10pt, a4paper]{article}
+
+
+\include{preambula}
+	
+\begin{document}
+
+\def\tablename{Tabela}	
+
+\begin{titlepage}
+	\begin{center}
+		\textsc{\LARGE \formakursu}\\[1cm]		
+		\textsc{\Large \kurs}\\[0.5cm]		
+		\rule{\textwidth}{0.08cm}\\[0.4cm]
+		{\huge \bfseries \doctype}\\[1cm]
+		{\huge \bfseries \projectname}\\[0.5cm]
+	
+		\rule{\textwidth}{0.08cm}\\[1cm]
+		
+		\begin{flushright} \large
+		\emph{Skład grupy:}\\
+		\osobaA\\
+
+		
+		\emph{Termin: }\termin\\[0.4cm]
+
+		\emph{Prowadzący:} \\
+		\prowadzacy \\
+		
+		\end{flushright}
+		
+		\vfill
+		
+		{\large \today}
+	\end{center}	
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Opis projektu}
+\label{sec:OpisProjektu}
+Mimo wielu programów telewizyjnych pogodowych, wielu ludzi szuka sposobów na zdobywanie informacji na temat pogody. Telewizyjne prognozy pogody są bardzo często ogólne, przedstawiają tylko podstawowe informacje i nie dostarczają wiedzy co do konkretnych miejsc oraz danych specjalistycznych na temat warunków tam panujących. Program ten, będzie aplikacją, która by w przystępny sposób dostarczała informacje pogodowe, wyspecjalizowane w narciarstwie i snowboardingu. 
+Projekt zakłada stworzenie aplikacji w qt Creator, która by przedstawiała warunki narciarskie w wybranych górach w Polsce. Aplikacja korzystałaby z wybranego serwisu narciarskiego, który dostarcza podstawowych informacji pogodowych na danych szczytach górskich obecnego dnia.
+
+\section{Założenia projektowe} 
+	\begin{flushleft}
+	Zdecydowano się na następujące rozwiązania:\\
+	\end{flushleft}
+	\begin{itemize}
+		\item Aplikacja będzie się dzieliła na dwa widoki. \textit{Tryb Domyślny} i \textit{Tryb Szczytu}. 
+		\item Okno \textit{Trybu Domyślnego} będzie podzielony na pasek Menu oraz mapę południowej Polski.
+		\item Na pasku Menu będzie kilka pozycji. Pierwszą z nich będzie wybór szczytu górskiego z rozwijanej alfabetycznej listy dostępnych szczytów. Druga planowana opcja to możliwość aktualizacji danych. Ostatnią, wstępnie przewidywaną pozycją jest opcja przełączenia widoku mapy z geograficznego na graficzny.
+		\item Na mapie będą widoczne zaznaczone szczyty górskie. Będzie można dokonać wyboru szczytu górskiego także poprzez kliknięcie go. 
+		\item Na mapę, koło każdego szczytu będą naniesione efekty graficzne zależne od podstawowych informacji pogodowych. Będą to podstawowe symbole charakterystyczne dla prognoz pogodowych, ale także symbole odnoszące się do warunków narciarskich np. ilość opadów i pokrywy śnieżnej. 
+		\item \textit{Tryb Szczytu} będzie widokiem do którego przechodzimy po wyborze konkretnego szczytu. Będzie zawierał on o wiele dokładniejsze informacje o warunkach na danym szczycie. 
+		\item Po lewej stronie okna będą informacje o warunkach atmosferycznych z elementami graficznymi. Zachmurzenie, temperatura, ciśnienie, wiatr oraz czas wschodu i zachodu słońca. 
+		\item Po prawej stronie okna zostaną zamieszczone informacje o warunkach narciarskich. Grubość pokrywy śnieżnej i jej rodzaj (czy jest naturalna czy sztuczna), kiedy były ostatnie opady oraz ile jest czynnych wyciągów na stokach.
+		\item Na górnym pasku prócz nazwy góry będzie znajdować się opcja cofnięcia się do \textit{Trybu Domyślnego}.
+		\item Aplikacja będzie podsumowywała pobrane dane i je punktowała. Ocena stanu danego szczytu będzie wyświetlana zarówno w \textit{Trybie Domyślnym} jak i w \textit{Trybie Szczytu} w postaci efektu graficznego np. ilość gwiazdek w skali 1--5 lub zakres koloru od czerwieni do zieleni.
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\
+		\\\
+		\\\
+		\\\
+		\\
+	\\
+	\\
+	\\
+	\\
+	\\
+	\\
+		\\
+		\\
+		\\
+		\\
+		
+	\end{itemize}
+
+	
+
+\section{Harmonogram pracy} 
+	\begin{flushleft}
+	Kamienie milowe zostały pogrubione i podkreślone\\
+	\end{flushleft}
+	\begin{enumerate}
+		\item Zaimplementowanie fundamentów aplikacji QT.  \\
+		\underline {Termin: 17.03 -- 19.03}
+		\item Stworzenie widoku Trybu Domyślnego i Trybu Szczytu z opcją przejścia z jednego do drugiego.\\
+		\underline {Termin: 18.03 -- 26.03}
+		\textbf{\item \underline{Implementacja pobierania danych z wybranego portalu internetowego.}}\\
+		\underline {Termin: 23.03 -- 02.04}
+		\item Opracowanie przyporządkowywania pobranych danych do szczytów górskich.\\
+		\underline {Termin: 07.04 -- 09.04}
+		\item Stworzenie statycznych efektów graficznych dla Trybu Domyślnego. \\
+		\underline {Termin: 14.04 -- 16.04}
+		\item Stworzenie dynamicznych efektów graficznych dla Trybu Domyślnego\\
+		\underline {Termin: 15.04 -- 23.04}
+		\item Stworzenie statycznych efektów graficznych dla Trybu Szczytu.\\
+		\underline {Termin: 20.04 -- 30.04}
+		\item Dopracowanie opcji Menu i okna Trybu Szczytu\\
+		\underline {Termin: 05.05 -- 07.05}
+		\textbf{\item \underline{Opracowanie algorytmu określającego ogólną ocenę szczytu.}}\\
+		\underline {Termin: 08.05 -- 14.05}
+		\item Zaimplementowanie algorytmu oceny szczytu.\\
+		\underline {Termin: 10.05 -- 21.05}
+		\item Dopracowanie niedociągnięć i szczegółów aplikacji.\\
+		\underline {Termin: 22.05 -- 28.05}
+		\item Stworzenie ostatecznej dokumentacji.\\
+		\underline {Termin: 02.06 -- 04.06}
+	\end{enumerate}
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{gantt.png}
+	\caption{Wykres Gantta}
+	\end{figure}
+\section{Projekt graficznego interfejsu użytkownika} 
+	\begin{flushleft}
+	Okno \textit{Trybu Domyślnego} włącza się wraz z uruchomieniem programu. Na pasku menu znajdują się trzy pozycje. \\
+	\end{flushleft}
+\begin{enumerate}
+\item Pierwsza od lewej pozycja to opcja rozwijania listy dostępnych szczytów, posegregowana alfabetycznie. Klikając wybrany szczyt następuje przejście do okna \textit{Trybu Szczytu} z danymi pogodowymi i narciarskimi wybranej góry. Pozycja została nazwana jako zatytułowana "Szczyt". \\
+\item Druga od lewej pozycja to "Aktualizacja pogody". W momencie kliknięcia tej opcji, aplikacja dokona pobrania aktualnych danych pogodowych i narciarskich z danego portalu internetowego. \\
+\item Trzecia pozycja od lewej, nazwana "Przełącz Widok", po kliknięciu w nią, ma zmienić rodzaj mapy z graficznej na geograficzną i z powrotem.  \\
+\end{enumerate}
+	\begin{flushleft}
+	Niżej, pod paskiem menu, znajdować się będzie mapa południowej Polski z zaznaczonymi lokalizacjami kilku szczytów. Wokół lokalizacji danego szczytu znajdą się następujące grafiki:\\
+	\end{flushleft}
+	\begin{enumerate}
+\item Pierwszą grafiką jest symbol pogodowy, który będzie reprezentował klasycznymi symbolami meteorologicznymi pokazywał zachmurzenie i opady w tym rejonie. \\
+\item Druga pozycja to wartość średniej temperatury w ciągu dnia. \\
+\item Trzecia grafika będzie reprezentować poziom pokrywy śnieżnej. W zależności od danej grubości warstwy śniegu będzie przedstawiała wzgórze o odpowiedniej ilości placów śniegu. \\
+\item Obok góry na mapie znajdować się będzie jej nazwa. \\
+\item Ostatnią pozycją graficzną będzie lokalizacja szczytu. Otoczona będzie kolorowym kręgiem, który będzie przedstawiał ogólny stan warunków narciarskich na tej górze. Czerwony kolor oznacza fatalny stan, gdy zielony reprezentuje idealne warunki narciarskie. Przy najechaniu myszką na tę pozycję wyświetli bardziej szczegółowa lista ocenianych kategorii, która wpłynęła na ostateczny wynik oceny szczytu. Kliknięcie lokalizacji szczytu zaowocuje otwarciem okna okna \textit{Trybu Szczytu} z danymi pogodowymi i narciarskimi wybranej góry.\\
+\end{enumerate}
+\begin{flushleft}
+	Okno \textit{Trybu Szczytu} można uruchomić z okna \textit{Trybu Domyślnego} poprzez klikniecie szczytu z rozwijanej listy lub poprzez kliknięcie lokalizacji szczytu na mapie. Na pasku menu będzie tylko wyświetlona nazwa wybranego szczytu po lewej oraz opcja powrotu do widoku \textit{Trybu Domyślnego}. 
+	Lewa strona okna będzie dysponować danymi warunków pogodowych. Prawa strona przedstawiać będzie warunki narciarskie.\\
+		\end{flushleft}
+	\begin{enumerate}
+\item Pierwszą grafiką w warunkach narciarskich jest symbol pogodowy, który będzie reprezentował klasycznymi symbolami meteorologicznymi zachmurzenie i opady w tym rejonie. \\
+\item Obok umieszczone zostaną wartości temperatury za dnia i nocy. \\
+\item Poniżej zamieszczone zostaną dane o ciśnieniu atmosferycznym, prędkości wiatru oraz godzinie wschodu i zachodu słońca. \\
+\item W warunkach narciarskich będzie w pierwszej kolejności przedstawiony poziom opadów śnieżnych. Napisana zostanie ilość cm grubości warstwy śniegu oraz data ostatnich opadów. Obok zamieszczona będzie grafika reprezentującą stan ośnieżenia stoku. \\
+\item Drugą informacją z warunków narciarskich będzie ilość czynnych wyciągów na stokach tej góry. Obok znajdować się będzie grafika reprezentująca właśnie tę wartość.\\
+\item Ostatni element graficzny będzie związany z oceną stanu pogodowego i narciarskiego wzgórza. Za pomocą odpowiedniego algorytmu, aplikacja będzie podsumowywała wszystkie parametry danego wzgórza i wystawiać ocenę w skali 1--5. Ocena będzie też reprezentowana przez krążek o różnych kolorach. Czerwień będzie odpowiadał ocenie 1, pomarańcz ocenie 2, żółty ocenie 3, limonkowy ocenie 4 i zieleń ocenie 5.\\
+\end{enumerate}
+
+
+\begin{flushleft}
+	\end{flushleft}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{menu2.png}
+	\caption{Tryb Domyślny}
+	\end{figure}
+	
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{szczytu.png}
+	\caption{Tryb Szczytu}
+	\end{figure}
+\newpage
+\addcontentsline{toc}{section}{Bibilografia}
+\bibliography{bibliografia}
+\bibliographystyle{plain}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
